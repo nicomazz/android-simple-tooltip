@@ -69,6 +69,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         findViewById(R.id.btn_dialog).setOnClickListener(this);
         findViewById(R.id.btn_center).setOnClickListener(this);
         findViewById(R.id.btn_overlay_rect).setOnClickListener(this);
+        findViewById(R.id.btn_custom_dialog).setOnClickListener(this);
+
     }
 
     @Override
@@ -266,6 +268,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     .overlayOffset(0)
                     .build()
                     .show();
+        } else if (v.getId() == R.id.btn_custom_dialog){
+            new TestDialog().show(getSupportFragmentManager().beginTransaction(),"TestDialog");
         }
     }
 }
